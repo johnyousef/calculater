@@ -1,0 +1,19 @@
+body, html {
+    background-color: orange;
+    height: 100%;
+}
+
+.parent_container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child_container {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 16px;
+    border-radius: 14px;
+    /* height: 400px;
+    width: 300px; */
+}
