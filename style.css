@@ -48,3 +48,7 @@ button.delete, button.clear_all {
     min-width: 180px;
     margin: 4px;
 }
+
+.output_text {
+    text-align: right;
+}
