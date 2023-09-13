@@ -23,6 +23,21 @@ toolbar.addEventListener("click", (e) => {
         input_text.textContent = "";
         output_text.textContent = "";
     }
+    // if pressed delete button
+    else if (e.target.attributes[0].textContent === "delete") {
+        // delete the last num/oper
+        let tmp = input_text.textContent;
+        console.log(tmp);
+        tmp = tmp.split("");
+        console.log(tmp);
+        tmp.pop()
+        console.log(tmp);
+        tmp = tmp.join("")
+        console.log(tmp);
+
+        input_text.textContent = tmp;
+        output_text.textContent = "";
+    }
     // if pressed enter button
     else if (e.target.attributes[0].textContent === "enter") {
         // calculate
