@@ -28,7 +28,8 @@ body, html {
 .screen_container {
     background-color: rgba(9, 170, 9, 0.699);
     min-height: 75px;
-    min-width: 360px;
+    width: 360px;
+    word-wrap: break-word;
 }
 
 .toolbar_container {
