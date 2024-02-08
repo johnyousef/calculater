@@ -1,7 +1,9 @@
 body, html {
     background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    padding: 16px;
 }
 
 .parent_container{
@@ -9,6 +11,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 306px;
 }
 
 .child_container {
@@ -20,7 +23,7 @@ body, html {
     gap: 16px;
     align-items: center;
     justify-content: center;
-    max-width: 380px;
+    width: 306px;
     /* height: 400px;
     width: 300px; */
 }
@@ -28,7 +31,7 @@ body, html {
 .screen_container {
     background-color: rgba(9, 170, 9, 0.699);
     min-height: 75px;
-    width: 360px;
+    width: 274px;
     word-wrap: break-word;
 }
 
@@ -40,13 +43,14 @@ body, html {
 }
 
 button {
-    flex: 0 0 90px;
-    height: 90px;
+    flex: 0 0 60px;
+    /* height: 90px; */
+    width: auto;
     margin: 2px;
 }
 
 button.delete, button.clear_all {
-    min-width: 180px;
+    min-width: 120px;
     margin: 4px;
 }
 
