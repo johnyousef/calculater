@@ -1,4 +1,3 @@
-
 console.log("2020".split(/[-*/+]+/));
 console.log(parseFloat("2"));
 
@@ -16,13 +15,18 @@ toolbar.addEventListener("click", (e) => {
     }
     // if its an opration
     else if (e.target.attributes[0].textContent.includes("operation")){
+        // if there is no number
+        if (input_text.textContent === "" || input_text.textContent === "-"){
+            alert("type a number first");
+        }
         // if there is not an opration
-        if (!(input_text.textContent.includes("/") || input_text.textContent.includes("*") || input_text.textContent.includes("-") || input_text.textContent.includes("+"))) {
+        else if (!(input_text.textContent.includes("/") || input_text.textContent.includes("*") || input_text.textContent.includes("-") || input_text.textContent.includes("+"))) {
             // type it
             input_text.textContent += e.target.attributes[1].textContent;            
         }
         // if there is an answer
         else if (input_text.textContent.split(/[-*/+]+/)[1].length > 0) {
+            console.log(input_text.textContent.split(/[-*/+]+/)[1]);
             answer = calculate(input_text.textContent);
             console.log(answer);
             if (!(isNaN(answer))) {
@@ -74,15 +78,15 @@ function calculate(expression) {
     if (expression.includes("+")) {
         return add(expression);        
     }
-    else if (expression.includes("-")) {
-        return subtract(expression); 
-    }    
     else if (expression.includes("*")) {
         return multiply(expression);
     }
     else if (expression.includes("/")) {
         return divide(expression);
     }
+    else if (expression.includes("-")) {
+        return subtract(expression); 
+    }    
 }
 
 function add(expression) {
@@ -91,7 +95,11 @@ function add(expression) {
 }
 
 function subtract(expression) {
-    let num_arr = expression.split("-");    
+    let num_arr = expression.split("-");
+    console.log(num_arr);    
+    if (num_arr[0] === "") {
+        return -parseFloat(num_arr[1]) - parseFloat(num_arr[2]);   
+    }
     return parseFloat(num_arr[0]) - parseFloat(num_arr[1]);   
 }
 
